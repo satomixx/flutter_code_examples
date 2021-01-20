@@ -2,6 +2,10 @@
 
 ---
 
+- https://qiita.com/colorrabbit/items/c03a5eb9ecb2b23469a4
+
+---
+
 # avoid_single_cascade_in_expression_statements
 - [ドキュメント](https://dart-lang.github.io/linter/lints/avoid_single_cascade_in_expression_statements.html)
 

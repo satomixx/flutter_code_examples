@@ -2,6 +2,10 @@
 
 ---
 
+- https://qiita.com/colorrabbit/items/466da54e36f4acdf25c4
+
+---
+
 ## 概要
 Dart/Flutterのプロジェクトでコードの静的解析を行うには、 `analysis_options.yaml` を設定します。
 
