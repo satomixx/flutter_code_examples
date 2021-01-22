@@ -1,11 +1,3 @@
-# 【備忘録】Dart/Flutterプロジェクトでの静的解析によるLintルールについて
-
----
-
-- https://qiita.com/colorrabbit/items/466da54e36f4acdf25c4
-
----
-
 ## 概要
 Dart/Flutterのプロジェクトでコードの静的解析を行うには、 `analysis_options.yaml` を設定します。
 
@@ -13,11 +5,36 @@ Dart/Flutterのプロジェクトでコードの静的解析を行うには、 `
 
 また、Dart/FlutterでのLintルールは、[こちらに一覧が記載されています。](https://dart-lang.github.io/linter/lints/index.html)
 
-VS CodeやAndroid Studioで、静的解析によるエラーに遭遇しても、じゃあどうしたらいいのか、すぐにわからないことが度々あるので、こちらにそれを記載していきます。
+VSCodeやAndroid Studioで、静的解析によるエラーに遭遇しても、じゃあどうしたらいいのか、すぐにわからないことが度々あるので、こちらにそれを記載していきます。
 
 ただ、本来は各IDEで適切なpackageを設定するか、[こちらのLintルール一覧](https://dart-lang.github.io/linter/lints/index.html)で検索するのが適切な解決策かなとは思います。
 
 ## ルール
+
+### avoid_function_literals_in_foreach_calls
+*AVOID using forEach with a function literal.*
+*関数リテラルでforEachを使うことは避ける*
+
+[ドキュメント](https://dart-lang.github.io/linter/lints/avoid_function_literals_in_foreach_calls.html)
+
+シーケンスの反復処理においては、for文をもちいる。
+
+```dart
+// この使い方は避けること
+dogs.forEach((dog) {
+  .....
+});
+
+// for文にする
+for (var dog in dogs) {
+  .....
+}
+
+// この様な書き方はOK
+dogs.forEach(print);
+```
+
+
 ### avoid_init_to_null
 [ドキュメント](https://dart-lang.github.io/linter/lints/avoid_init_to_null.html)
 *nullを使って初期化しない*
